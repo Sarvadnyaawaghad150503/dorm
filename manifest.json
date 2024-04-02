@@ -1,0 +1,23 @@
+{
+  "name": "DormDine",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#5900b3",
+  "theme_color": "black",
+  "scope": ".",
+  "description": "This is a Fast food delivery app.",
+  "icons": [
+    {
+      "src": "image/DormDIne.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "image/CompressJPEG.online_512x512_image.jpg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

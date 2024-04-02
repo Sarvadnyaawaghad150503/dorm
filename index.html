@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSQNB0SBN9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CSQNB0SBN9');
+</script>
+<script>
+	window.addEventListener('load', () => {
+	registerSW();
+	});
+
+	// Register the Service Worker
+	async function registerSW() {
+	if ('serviceWorker' in navigator) {
+		try {
+		await navigator
+				.serviceWorker
+				.register('serviceworker.js');
+		}
+		catch (e) {
+		console.log('SW registration failed');
+		}
+	}
+	}
+</script>
+<link rel="manifest"
+href="manifest.json">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <meta name="theme-color" content="#4285f4">
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>DormDine</title>
+</head>
+<body>
+    <!-------------------------------------------- HEADER SECTION -->
+    <header class="header" >
+        <a href="#" class="logo">
+            <img src="./image/DormDIne.png" alt="logo">
+        </a>
+        
+        <nav class="navbar">
+            <a href="./index.html" class="active">home</a>
+            <a href="./about.html">about</a>
+            <!-- <a href="./menu.html">menu</a>
+            <a href="./products.html">products</a>
+            <a href="./review.html">review</a> -->
+            <a href="./contact.html">contact</a> 
+            <a href="./blog.html">blog</a>
+        </nav>
+        <div class="buttons">
+            <button id="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+            <button id="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <button id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="search-form">
+            <input type="text" class="search-input" id="search-box" placeholder="Search">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="cart-items-container">
+            <div class="cart-item">
+                <i class="fas fa-times"></i>
+                <img src="./image/pngwing.com (1).png" alt="menu">
+                <div class="content">
+                    <h3>cart item 01</h3>
+                    <div class="price">Rs 50</div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <i class="fas fa-times"></i>
+                <img src="./image/pngwing.com (2).png" alt="menu">
+                <div class="content">
+                    <h3>cart item 02</h3>
+                    <div class="price">Rs 100 </div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <i class="fas fa-times"></i>
+                <img src="./image/pngwing.com (3).png" alt="menu">
+                <div class="content">
+                    <h3>cart item 03</h3>
+                    <div class="price">Rs 150 </div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <i class="fas fa-times"></i>
+                <img src="./image/pngwing.com (4).png" alt="menu">
+                <div class="content">
+                    <h3>cart item 04</h3>
+                    <div class="price">Rs 200 </div>
+                </div>
+            </div>
+            <a href="#" class="btn">check out </a>
+        </div>
+    </header>
+    <!---------------------------------------------HEADER SECTION -->
+
+    <!---------------------------------------------HOME SECTION -->
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Welcome to</h3>
+        <h3 class="dorm"> DormDine </h3>
+        <div class="back">
+        <div class="options">
+            <select>
+                <option disabled>Select type</option>
+                <option value="1BHK">1BHK</option>
+                <option value="2BHK">2BHK</option>
+                <option value="1RK">1RK</option>
+                <option value="PG">PG</option>
+                <option value="HOSTEL">HOSTEL</option>
+            </select>
+            <select>
+                <option disabled>Select Price Range</option>
+                <option value="0">0-5000</option>
+                <option value="1">5000 - 10,000</option>
+                <option value="2">10,000 - 20,000 </option>
+                <option value="3">20,000 - 30,000</option>
+                <option value="4">30,000-50,000</option>
+            </select>
+            <select>
+                <option disabled>Select Location in Chembur</option>
+                <option value="0">Navjeevan Society</option>
+                <option value="1">Sindhi Society</option>
+                <option value="2">Nityanand Society</option>
+                <option value="3">Gurumukh Sadan Society</option>
+                <option value="4">Tolaram Colony</option>
+                <option value="5">Collector Colony</option>
+            </select>
+            <i class="AiOutlineSearch searchIcon" onclick="handleSearch()"></i>
+        </div>
+    </div>
+        </div>
+    </section>
+    <!---------------------------------------------HOME SECTION -->
+    
+    <!---------------------------------------------MENU SECTION -->
+    <section class="menu" id="menu">
+        <h1 class="heading">Different Types of Properties</h1>
+        <div class="box-container">
+            <div class="box">
+
+                <div class="box-head">
+                    <img src="./image/pg.jpeg" alt="">
+                    <!-- <span class="menu-category">Pizza</span> -->
+                    <h3>1 BHK Flat</h3>
+                    <!-- <div class="price">Rs 349 <span>Rs 499</span></div> -->
+                </div>
+                <!-- <div class="box-bottom">
+                    <a href="#" class="btn">add to cart</a>
+                </div> -->
+            </div>
+            <div class="box">
+
+                <div class="box-head">
+                    <img src="./image/2bhk.jpg" alt="">
+                    
+                    <h3>2 BHK Flat   </h3>
+                    <!-- <div class="price">Rs 249 <span>Rs 375</span></div> -->
+                </div>
+                <!-- <div class="box-bottom">
+                    <a href="#" class="btn">add to cart</a>
+                </div> -->
+            </div>
+            <div class="box">
+
+                <div class="box-head">
+                    <img src="./image/1bhk.jpg" alt="">
+                    <span class="menu-category">Pizza</span>
+                    <h3>Hostel / PG</h3>
+                  
+                </div>
+                <!-- <div class="box-bottom">
+                    <a href="#" class="btn">add to cart</a>
+                </div> -->
+            </div>
+            
+    </section>
+    <!---------------------------------------------MENU SECTION -->
+
+
+    <!---------------------------------------------PRODUCTS SECTION -->
+    <section class="products" id="products">
+        <h1 class="heading">our Services </h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="box-head">
+                    <!-- <span class="title">mini burger</span> -->
+                    <a href="#" class="name">Rent/Sell Flats
+                    </a>
+                </div>
+                <div class="image">
+                    <img src="./image/image.png" alt="">
+                </div>
+                <div class="box-bottom">
+                    <div class="info">
+                        <b class="price">Explore a wide range of rental apartments on our platform.Simplify your property search today.</b>
+                            <!-- <span class="amount">110gr / 300 Cal</span> -->
+                        </div>
+                       
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-head">
+                    <!-- <span class="title">cheese burger</span> -->
+                    <a href="#" class="name">Tiffin Services</a>
+                </div>
+                <div class="image">
+                    <img src="./image/food.png" alt="">
+                </div>
+                <div class="box-bottom">
+                    <div class="info">
+                        <b class="price">Explore local tiffin services around you, making mealtime effortless while settling into your new rental.</b>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-head">
+                    <!-- <span class="title">Double burger</span> -->
+                    <a href="#" class="name">Roommates</a>
+                </div>
+                <div class="image">
+                    <img src="./image/roomaate.png" alt="">
+                </div>
+                <div class="box-bottom">
+                    <div class="info">
+                        <b class="price">Connect with like-minded individuals in need of roommates and secure a harmonious living arrangement</b>
+                            <!-- <span class="amount">110gr / 300 Cal</span> -->
+                        </div>
+                       
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---------------------------------------------PRODUCTS SECTION -->
+        
+    <!---------------------------------------------ABOUT US SECTION -->
+    <section class="about" id="about">
+        <h1 class="heading">about <span>us</span> </h1>
+
+        <div class="row">
+            <div class="image">
+                <img src="./image/DormDIne.png" alt="">
+            </div>
+            <div class="content">
+                <!-- <h3>What is the secret receipe of our burgers</h3> -->
+                <div class="paragraph">
+                    <p>
+Welcome to DormDine, your ultimate destination for finding the perfect flat along with comprehensive dining facilities in various areas. At DormDine, we understand the importance of finding a comfortable and convenient living space, which is why we provide detailed flat details available in different locations. Whether you're searching for a cozy apartment in the heart of the city or a spacious flat in a serene neighborhood, DormDine has you covered. Our user-friendly website allows you to browse through a wide range of listings, filter your search based on your preferences, and connect directly with property owners. But we don't stop there! In addition to helping you find your ideal living space, DormDine also offers information on dining facilities in the vicinity.
+</p>
+                </div>
+                    <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+    <!---------------------------------------------ABOUT US SECTION -->
+    
+    <!---------------------------------------------REVIEW SECTION -->
+    <!-- <section class="review" id="review">
+        <h1 class="heading">customer's <span>review</span> </h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="./image/pngwing.com (8).png" alt="quote">
+                <p> I'm always impressed by the range of restaurants available on this website. Whether I'm craving burgers, pizza, or Asian cuisine, I can always find something to satisfy my appetite. The website is reliable, and the food quality is consistently excellent.</p>
+                <img src="./image/pngwing.com (9).png" alt="customer-avatar" class="user">
+                <h3>Yash Uskelwar</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="box">
+                <img src="./image/pngwing.com (8).png" alt="quote">
+                <p>The convenience of ordering food from this website is unmatched. I can order my favorite meals with just a few clicks and have them delivered to my doorstep in no time. The website is well-designed, making it easy to navigate, and the delivery is always prompt.</p>
+                <img src="./image/pngwing.com (10).png" alt="customer-avatar" class="user">
+                <h3>Harshita Dubey</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="box">
+                <img src="./image/pngwing.com (8).png" alt="quote">
+                <p>I love using this fast food delivery website! It's so easy to order my favorite meals from the comfort of my home. The food always arrives hot and delicious, and the delivery is always on time.</p>
+                <img src="./image/pngwing.com (11).png" alt="customer-avatar" class="user">
+                <h3>Sneha Utekar</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+    </section>   -->
+    <!---------------------------------------------REVIEW SECTION -->
+    <!---------------------------------------------CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <h1 class="heading">contact <span>us</span> </h1>
+        <div class="row">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.8616688864765!2d72.88367541489297!3d19.079384587080392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b96f91a6c81f%3A0x7c66614d7f8d15c9!2sKurla%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1658505945506!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <form>
+                <h3>get in touch</h3>
+                <div class="inputBox">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="name">
+                </div>
+                <div class="inputBox">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="email">
+                </div>
+                <div class="inputBox">
+                    <i class="fas fa-phone"></i>
+                    <input type="number" placeholder="number">
+                </div>
+                <input type="submit" class="btn" value="contact now">
+            </form>
+        </div>
+    </section>
+    <!---------------------------------------------CONTACT SECTION -->
+
+    <!---------------------------------------------BLOG SECTION -->
+    <section class="blog" id="blog">
+        <h1 class="heading">our <span>blog</span> </h1>
+        <div class="box-container">
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/realestatebeach.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">how I found My Home on Beach</a>
+                    <span>by admin / 15th Jan, 2024</span>
+                    <p>
+                        In my quest for a tranquil escape by the beach, NoBroker emerged as the ultimate solution, revolutionizing my house-hunting experience. With its seamless interface and direct communication with property owners, I navigated through a myriad of listings, discovering hidden gems and envisioning my dream home. Through transparent negotiations and effortless viewings, I found the perfect beachfront property that surpassed all expectations. NoBroker not only simplified the process but also empowered me to transition seamlessly into my newfound sanctuary, where every sunrise and sunset now paints the canvas of my serenity.
+
+                    </p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/estate4.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Resort Expreience</a>
+                    <span>by admin / 1st Feb, 2024</span>
+                    <p>Embarking on a quest for a slice of paradise, we set out with eager hearts and adventurous spirits, determined to uncover the ultimate haven—a resort that would redefine our idea of luxury and relaxation. Our journey began with meticulous research, scouring the internet for hidden gems nestled amidst nature's embrace. After countless hours of browsing through travel websites and reading reviews, we stumbled upon a promising candidate—a resort tucked away in a pristine corner of the world, promising tranquility and serenity in abundance. With excitement coursing through our veins, we reached out to the resort's management, eager to learn more about what awaited us.
+
+                </p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+            <div class="box-full">
+                <div class="image">
+                    <img src="./image/estate5.jpg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Alibag Palace</a>
+                    <span>by admin / 21st Feb, 2024</span>
+                    <p>Throughout our stay, every moment was a testament to the resort's commitment to excellence. From luxurious accommodations adorned with intricate details to world-class amenities designed to pamper and rejuvenate, every aspect of our experience was carefully curated to exceed our wildest dreams. Whether we were lounging by the infinity pool, indulging in gourmet cuisine, or embarking on exhilarating adventures in the surrounding wilderness, each day unfolded as a new chapter in our journey of discovery.</p>
+                    <a href="#" class="btn">read more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---------------------------------------------BLOG SECTION -->
+    
+    <!---------------------------------------------FOOTER SECTION -->
+    <section class="footer">
+        <div class="search">
+            <input type="text" class="search-input" placeholder="Search">
+            <button class="btn btn-primary">search</button>
+        </div>
+        <div class="share">
+            <a href="#" class="fab fa-facebook"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-pinterest"></a>
+        </div>
+        <div class="links">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#menu">menu</a>
+            <a href="#products">products</a>
+            <a href="#review">review</a>
+            <a href="#contact">contact</a>
+            <a href="#blog">blog</a>
+        </div>
+        <div class="credit">
+            created by <span>Shubham Nakashe</span> | all rights reserved!
+        </div>
+    </section>
+    <!---------------------------------------------FOOTER SECTION -->
+
+<script src="./script.js"></script>
+</body>
+</html>
