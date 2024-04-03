@@ -9,7 +9,7 @@ self.addEventListener("fetch", function (event) {
     })
   );
   console.log("Fetch successful!");
-  event.waitUntil(addToCache(event.requesst));
+  event.waitUntil(addToCache(event.request));
 });
 self.addEventListener("sync", (event) => {
   if (event.tag === "syncMessage") {
